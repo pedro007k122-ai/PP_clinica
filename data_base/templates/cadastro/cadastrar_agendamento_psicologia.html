@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Agendamento de Psicologia</title>
+</head>
+<body>
+    <h1>Novo Agendamento de Psicologia</h1>
+
+    <form method="POST" action="{% url 'cadastrar_agendamento_psicologia' %}">
+        
+        {% csrf_token %}
+
+        <fieldset>
+            <legend>Dados do Cliente</legend>
+            
+            <div>
+                <label for="cliente">Nome Completo:</label>
+                <input type="text" id="cliente" name="cliente" required>
+            </div>
+
+            <div>
+                <label for="cpf">CPF (apenas números):</label>
+                <input type="text" id="cpf" name="cpf" maxlength="11" required>
+            </div>
+
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" required>
+            </div>
+
+            <div>
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="">Selecione</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes do Agendamento</legend>
+
+            <div>
+                <label for="data_e_hora">Data e Hora (Ex: YYYY-MM-DD HH:MM):</label>
+                <input type="datetime-local" id="data_e_hora" name="data_e_hora" required>
+            </div>
+
+            <div>
+                <label for="tipo_de_consulta">Tipo de Consulta:</label>
+                <input type="text" id="tipo_de_consulta" name="tipo_de_consulta" required>
+            </div>
+            
+            <div>
+                <label for="pdsp">Pref. Sexo do Profissional:</label>
+                <select id="pdsp" name="pdsp" required>
+                    <option value="">Sem Preferência</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <button type="submit">Agendar Consulta de Psicologia</button>
+    </form>
+</body>
+</html>
