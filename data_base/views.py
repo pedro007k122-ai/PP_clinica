@@ -95,4 +95,5 @@ def listar_agendamentos_psicologia(request):
 
 # --- Função Home Original ---
 def home (request):
-    return HttpResponse('TESTE')
+    # O Django procurará por 'home.html' dentro da pasta 'templates' do seu app.
+    return render(request, 'home.html')

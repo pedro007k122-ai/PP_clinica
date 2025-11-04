@@ -10,3 +10,5 @@ urlpatterns = [
     # Inclui todas as rotas definidas no seu app 'data_base'
     path('', include('data_base.urls')), 
 ]
+
+#data_base.urls
